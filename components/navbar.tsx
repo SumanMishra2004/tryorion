@@ -9,9 +9,7 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { useState, useEffect } from "react";
-import { getAuth, GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
-import { useRouter } from "next/navigation";
+
 import { Button } from "@nextui-org/button";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
@@ -31,7 +29,10 @@ import {
   SearchIcon,
   Logo,
 } from "@/components/icons";
+import { getAuth, GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
+import { useRouter } from "next/navigation";
 import app from "@/config/auth/firebaseConfig";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const router = useRouter();
