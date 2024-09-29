@@ -2,28 +2,23 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "changeble",
-  description: "Make beautiful websites regardless of your design experience.",
+  description: "Make The The only learning platform that helps you score better marks and support self-growth. learning platform that helps you score better marks and support self-growth. websites regardless of your design experience.",
   navItems: [
+
     {
-      label: "Home",
-      href: "/",
+      label: "Learn",
+      href: "/Learn",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Practise",
+      href: "/Practise",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Assessments",
+      href: "/Assessments",
     },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    },
+   
+  
   ],
   navMenuItems: [
     {
