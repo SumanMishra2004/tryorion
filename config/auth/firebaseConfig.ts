@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB5lZsASHEAuPZbrYgiQk2BtbvzzzyIJF8",
+  apiKey: process.env.NEXT_PUBLIC_AUTH_KEY,
   authDomain: "drivebaraze.firebaseapp.com",
   projectId: "drivebaraze",
   storageBucket: "drivebaraze.appspot.com",
@@ -16,4 +16,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+console.log(firebaseConfig.apiKey);
+
 export default app
