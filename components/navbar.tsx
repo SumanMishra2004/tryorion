@@ -27,7 +27,7 @@ import {
   DiscordIcon,
   HeartFilledIcon,
   SearchIcon,
-  Logo,
+
 } from "@/components/icons";
 import { getAuth, GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import { useRouter } from "next/navigation";
@@ -69,16 +69,14 @@ export const Navbar = () => {
   }
 
   return (
-    <NextUINavbar maxWidth="2xl" position="sticky" className="h-[5rem] dark:bg-gray-950 bg-gray-200 shadow-md   shadow-slate-400 dark:shadow-slate-800">
-      <NavbarContent>
+    <NextUINavbar maxWidth="xl" position="sticky" className="h-[5rem] dark:bg-gray-950 bg-gray-200 shadow-md   shadow-slate-400 dark:shadow-slate-800">
 
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-3" href="/">
-            <Logo />
-          </NextLink>
-        </NavbarBrand>
-      </NavbarContent>
-      <NavbarContent className="basis-1/5 sm:basis-full " justify="center">
+
+
+      <img src='/orionlogo1.png' alt="" className="w-[11rem] h-auto md:w-[17rem]" />
+
+
+      <NavbarContent className="basis-1/5 sm:basis-full " justify="end">
 
         <ul className="hidden md:flex w-full justify-around ">
           {siteConfig.navItems.map((item) => (
@@ -102,28 +100,28 @@ export const Navbar = () => {
         className="hidden md:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
+        {/* <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
-          
 
-        </NavbarItem>
-        
+
+        </NavbarItem> */}
+
         {
-            user && user.photoURL && (
-              <Image alt="User Photo" src={user.photoURL} width={40} height={40} className="rounded-full" />
-            )
-          }
+          user && user.photoURL && (
+            <Image alt="User Photo" src={user.photoURL} width={40} height={40} className="rounded-full" />
+          )
+        }
 
-        
-        <NavbarItem className="hidden sm:flex gap-2">
+
+        <NavbarItem className="hidden md:flex gap-2">
           {
             user ? (
-              <Button variant="shadow" onClick={signOut}>
+              <Button variant="shadow" onClick={signOut} >
                 Logout
               </Button>
             ) : (
               <Button variant="shadow" onClick={signIn}>
-                Login
+                Sign-Up
               </Button>
             )
           }
@@ -132,22 +130,25 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="md:hidden basis-1 pl-4" justify="end">
-        <ThemeSwitch />
-        {
-            user && user.photoURL && (
-              <Image alt="User Photo" src={user.photoURL} width={40} height={40} className="rounded-full" />
-            )
-          }
+        {/* <ThemeSwitch /> */}
+        
 
-        <NavbarItem >
+        <NavbarItem className="hidden md:flex" >
+
+
+
           {
             user ? (
-              <Button variant="shadow" onClick={signOut}>
-                Logout
-              </Button>
+              <>
+
+
+
+                <Button variant="shadow" onClick={signOut}>
+                  Logout
+                </Button> </>
             ) : (
               <Button variant="shadow" onClick={signIn}>
-                Login
+                Sign-Up
               </Button>
             )
           }
@@ -164,7 +165,7 @@ export const Navbar = () => {
                 color={
                   index === 2
                     ? "primary"
-                    :  "foreground"
+                    : "foreground"
                 }
                 href="#"
                 size="lg"
@@ -173,7 +174,7 @@ export const Navbar = () => {
               </Link>
             </NavbarMenuItem>
           ))}
-         
+
         </div>
       </NavbarMenu>
     </NextUINavbar>
