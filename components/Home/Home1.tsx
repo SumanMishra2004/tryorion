@@ -14,7 +14,7 @@ function Home1() {
 
         </div>
         <div className="h-full md:w-[40%] overflow-hidden w-screen  max-w-full ">
-            <img src='/Dashboard view.png' className='scale-150 pl-7 md:pl-0'/>
+            <img src='/Dashboard View.png' className='scale-150 pl-7 md:pl-0'/>
         </div>
     </div>
   )
